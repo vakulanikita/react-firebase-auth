@@ -17,6 +17,7 @@ export default function Main({ children, title = "starter" }) {
       <Container
         pt={5}
         color={useColorModeValue('spacejelly', '#fff')}
+        maxW="sm"
       >
         { children }
       </Container>

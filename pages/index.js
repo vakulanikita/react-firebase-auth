@@ -6,24 +6,26 @@ import {
   Link,
   Heading,
 } from '@chakra-ui/react'
+import { AuthProvider } from "../contexts/AuthContext";
 import Signup from '../components/signup'
 
 export default function Home() {
   return (
-    <Main title="index page">
-      {/* <ThemeToggleButton /> */}
-      <Box mt={3}>
+    <AuthProvider>
+      <Main title="index page">
+        {/* <ThemeToggleButton /> */}
+        <Box mt={3}>
 
-        <Box align="center" mb={6}>
-          <Signup />
+          <Box align="center" mb={6}>
+            <Signup />
+          </Box>
+
+          <NextLink href="./page">
+            <Link textDecoration="underline" fontSize="xl">Routing</Link>
+          </NextLink>
+
         </Box>
-
-
-        <NextLink href="./page">
-          <Link textDecoration="underline" fontSize="xl">Routing</Link>
-        </NextLink>
-
-      </Box>
-    </Main>
+      </Main>
+    </AuthProvider>
   )
 }
