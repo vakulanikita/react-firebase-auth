@@ -28,7 +28,8 @@ export function AuthProvider({ children }) {
   }
 
   function resetPassword(email) {
-    return auth.sendPasswordResetEmail(email)
+    console.log(sendPasswordResetEmail(email));
+    return sendPasswordResetEmail(email)
   }
 
   function updateEmail(email) {

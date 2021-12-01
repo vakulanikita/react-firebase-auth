@@ -1,31 +1,34 @@
 import NextLink from 'next/link'
 import Main from '../components/layouts/main'
-import ThemeToggleButton from '../components/theme-toggle-button'
 import {
   Box,
   Link,
   Heading,
 } from '@chakra-ui/react'
 import { AuthProvider } from "../contexts/AuthContext";
-import Signup from '../components/signup'
+import Dashboard from './dashboard';
 
 export default function Home() {
   return (
-    <AuthProvider>
-      <Main title="index page">
-        {/* <ThemeToggleButton /> */}
-        <Box mt={3}>
+    <Main title="index page">
+      {/* <ThemeToggleButton /> */}
+      <Box mt={3}>
 
-          <Box align="center" mb={6}>
-            <Signup />
-          </Box>
-
-          <NextLink href="./page">
-            <Link textDecoration="underline" fontSize="xl">Routing</Link>
+        <Box display="flex" flexDir="column" alignItems="center" mb={6}>
+          <NextLink href="./login">
+            <Link textDecoration="underline" fontSize="xl">Login</Link>
           </NextLink>
 
+          <NextLink href="./signup">
+            <Link textDecoration="underline" fontSize="xl">Sign Up Link</Link>
+          </NextLink>
         </Box>
-      </Main>
-    </AuthProvider>
+
+        {/* <NextLink href="./page">
+          <Link textDecoration="underline" fontSize="xl">Routing</Link>
+        </NextLink> */}
+
+      </Box>
+    </Main>
   )
 }
